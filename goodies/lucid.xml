@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="lucid"
+           fetch="https://github.com/Lucid-Beta"
+           revision="queen-cake" />
+
+  <remote  name="github"
+           fetch="https://github.com/" />
+
+  <remote  name="aosp"
+           revision="refs/tags/android-10.0.0_r33"
+           fetch="https://android.googlesource.com"
+           review="android-review.googlesource.com" />
+
+  <!-- Build -->
+  <project path="build/make" name="platform_build" remote="lucid" >
+    	<copyfile src="core/root.mk" dest="Makefile" />
+  	  <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+   	 <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    	<linkfile src="core" dest="build/core" />
+	    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+	    <linkfile src="target" dest="build/target" />
+  	  <linkfile src="tools" dest="build/tools" />
+    </project>
+        <project path="build/blueprint" name="platform_build_blueprint" remote="lucid"/>
+	<project path="build/soong" name="platform_build_soong" remote="lucid" >
+ 	   <linkfile src="root.bp" dest="Android.bp" />
+	    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+   </project>
+
+   <!-- Manifest -->
+   	<project path="manifest" name="platform_manifest" remote="lucid"/>
+
+   <!-- Vendor -->
+   	<project path="vendor/lucid" name="platform_vendor_lucid"  remote="lucid"/>
+
+   <!-- Frameworks -->
+   	<project path="frameworks/native" name="platform_frameworks_native" remote="lucid"/>
+
+   <!-- Device -->
+   	<project path="device/qcom/common" name="platform_device_qcom_common" remote="lucid"/>
+
+   <!-- Prebuilts -->
+   	<project path="prebuilts/r8" name="platform_prebuilts_r8" remote="lucid"/>
+
+   <!-- Vendor -->
+        <project path="vendor/qcom/opensource/interfaces" name="platform_vendor_qcom_opensource_interfaces" remote="lucid"/>
+        <project path="vendor/qcom/opensource/fm-commonsys" name="platform_vendor_qcom_opensource_fm-commonsys" remote="lucid"/>
+
+   <!-- SDClang -->
+   	<project path="vendor/qcom/sdclang-8.0/linux-x86" name="ThankYouMario/proprietary_vendor_qcom_sdclang-8.0_linux-x86" remote="github" revision="quartz" />
+
+</manifest>

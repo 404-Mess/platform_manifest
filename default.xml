@@ -807,4 +807,11 @@
   <project name="platform/vendor/qcom/wlan" path="device/qcom/wlan" revision="97db02f9751804ec6c5239b4e83636e429c54f53" upstream="refs/heads/wlan-service.lnx.4.0.r23-rel"/>
   <project groups="aosp-android10-release" name="toolchain/benchmark" revision="8a10ad96327b4bc67e80bf9e6695d48be3d35385" upstream="refs/heads/ks-aosp.lnx.2.0.r7-rel"/>
   <project groups="aosp-android10-release,pdk" name="toolchain/pgo-profiles" revision="775be266c4cfa499f0b7a3456467312bee0d4b5d" upstream="refs/heads/ks-aosp.lnx.2.0.r7-rel"/>
+
+  <!-- Remove unused AOSP repos -->
+  <include name="goodies/obsolete.xml" />
+
+  <!-- Lucid Goodies -->
+  <include name="goodies/lucid.xml" />
+
 </manifest>
